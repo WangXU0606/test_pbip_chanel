@@ -1,0 +1,58 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 8.8000001907348633
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 250.20000000000005,
+            "y": 0
+          },
+          "nodeIndex": "REPORT DATE",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 406.59999999999991,
+            "y": 220
+          },
+          "nodeIndex": "FASHION_APP_CRASH_PLATEFORM_TECHNICAL_W",
+          "size": {
+            "height": 204,
+            "width": 461
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 224
+          },
+          "nodeIndex": "FSH_APP_TECHNICAL",
+          "size": {
+            "height": 300,
+            "width": 289
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}
