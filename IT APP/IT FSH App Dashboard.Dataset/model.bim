@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"FSH_APP_TECHNICAL\",\"FASHION_APP_CRASH_PLATEFORM_TECHNICAL_W\"]"
+        "value": "[\"FASHION_APP_CRASH_PLATEFORM_TECHNICAL_W\",\"agg__app__IT\",\"project_id\",\"dataset_id\",\"agg__app__IT__screen__name\",\"Measures table\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -38,6 +38,53 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "project_id",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"fsh-digital-dashboard-dev\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "60f11178-0bc2-47f3-8821-2fe62f744cac",
+        "queryGroup": "parameters"
+      },
+      {
+        "name": "dataset_id",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"wang_dev_DATASET_DASHBOARD\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "f8eaa633-e33c-496d-ae21-6db34bf8829e",
+        "queryGroup": "parameters"
+      }
+    ],
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "parameters"
+      }
+    ],
     "relationships": [
       {
         "name": "e7a2f849-e3ea-43cc-a204-26e5a8cdff38",
@@ -63,9 +110,16 @@
         "toTable": "REPORT DATE"
       },
       {
-        "name": "6d37b39a-8e3a-44b7-a299-13955eb8d3e8",
+        "name": "a6de31c0-5f6c-4411-b8fb-c8474162c3e2",
         "fromColumn": "DATE",
-        "fromTable": "FSH_APP_TECHNICAL",
+        "fromTable": "agg__app__IT",
+        "toColumn": "Date",
+        "toTable": "REPORT DATE"
+      },
+      {
+        "name": "c638215b-da82-4073-b8cf-5f6b6c5c8283",
+        "fromColumn": "DATE",
+        "fromTable": "agg__app__IT__screen__name",
         "toColumn": "Date",
         "toTable": "REPORT DATE"
       }
@@ -280,318 +334,6 @@
             "source": {
               "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
               "type": "calculated"
-            }
-          }
-        ]
-      },
-      {
-        "name": "FSH_APP_TECHNICAL",
-        "annotations": [
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "DATE",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "lineageTag": "caa6f7f4-0654-4c06-833b-4f63baf87952",
-            "sourceColumn": "DATE",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "REGION_CHANEL",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "aab095f7-d56d-4283-9961-aa2d409646f0",
-            "sourceColumn": "REGION_CHANEL",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "COUNTRY",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "7aac7eca-2a01-45b2-abbe-775e4a7fc6d8",
-            "sourceColumn": "COUNTRY",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "SESSION_ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e73c4b63-ab17-4994-ad9a-fcb6d91fa979",
-            "sourceColumn": "SESSION_ID",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "DEVICE_MODEL",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "f36a0271-1d57-4ce9-9c6f-02a27b0b8fd0",
-            "sourceColumn": "DEVICE_MODEL",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "APP_VERSION",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9fbdff96-134a-410f-8459-d82253ec2a4b",
-            "sourceColumn": "APP_VERSION",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "OPERATING_SYSTEM_VERSION",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "c8a3d60c-f367-42d3-bb30-ef2573a83846",
-            "sourceColumn": "OPERATING_SYSTEM_VERSION",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "SCREEN_VIEWS",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "e9e856c9-84aa-4cb0-bd43-0d086c48dc3e",
-            "sourceColumn": "SCREEN_VIEWS",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "NOTIFICATION_USERS",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "5b51829c-7dfa-46e9-9b14-da4a0089fff5",
-            "sourceColumn": "NOTIFICATION_USERS",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "NOTIFICATION_VISIT",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "92779948-6972-40ae-a0ec-ef321949e176",
-            "sourceColumn": "NOTIFICATION_VISIT",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "SCREEN_NAME",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "4755f69e-a873-4ccc-84d4-bdb60535f740",
-            "sourceColumn": "SCREEN_NAME",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "USER_ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9c6f114e-288f-4afd-9d9d-ed18691bb332",
-            "sourceColumn": "USER_ID",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "CUSTOM DEVICE MODEL",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "expression": "SWITCH(FSH_APP_TECHNICAL[DEVICE_MODEL],\"iPhone14,2\",\"iPhone 13 Pro\",\"iPhone15,2\",\"iPhone 14 Pro\",\"other\")",
-            "isDataTypeInferred": true,
-            "lineageTag": "98949adb-ced5-4c1f-9890-c0bf396b1121",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "MOBILE_VERSION_NAME",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "2dd9ed7b-34cc-4208-8519-536ef5272303",
-            "sourceColumn": "MOBILE_VERSION_NAME",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "USER_P_ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "c2cf2ebf-1f95-45c3-9f24-9359e1f13703",
-            "sourceColumn": "USER_P_ID",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "USER_TYPE",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "42ea5b4a-b8dc-47b4-9b87-6b923b0dd660",
-            "sourceColumn": "USER_TYPE",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "27c3a7e6-a4d1-4109-ac35-13f1269ef121",
-        "measures": [
-          {
-            "name": "Total Users",
-            "expression": "DISTINCTCOUNT( FSH_APP_TECHNICAL[USER_ID])",
-            "formatString": "0",
-            "lineageTag": "3b9679be-2e45-4087-b3d4-8a561da5a3c0"
-          },
-          {
-            "name": "Total Visit",
-            "expression": "DISTINCTCOUNT(FSH_APP_TECHNICAL[SESSION_ID])",
-            "formatString": "0",
-            "lineageTag": "c414d5e0-7c88-474f-a2bd-e1bd16031fca"
-          },
-          {
-            "name": "Screen Views",
-            "expression": "SUM(FSH_APP_TECHNICAL[SCREEN_VIEWS])",
-            "formatString": "0",
-            "lineageTag": "2d1c4c93-690a-413f-b2e8-55800b8de4ec"
-          },
-          {
-            "name": "Screens/Visits",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isDecimal\":true}"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": "[Screen Views]/[Total Visit]",
-            "formatString": "0",
-            "lineageTag": "3016ecca-a527-4315-a9e6-945dbeddf095"
-          },
-          {
-            "name": "Total Visit pour 1",
-            "changedProperties": [
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE([Total Visit], 'FSH_APP_TECHNICAL'[NOTIFICATION_VISIT] IN { 1 })"
-            ],
-            "extendedProperties": [
-              {
-                "name": "MeasureTemplate",
-                "type": "json",
-                "value": {
-                  "daxTemplateName": "FilteredMeasure",
-                  "version": 0
-                }
-              }
-            ],
-            "formatString": "0",
-            "lineageTag": "816f26a0-4b33-420d-8778-a0f2fc816046"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "FSH_APP_TECHNICAL-c59ea572-f95c-4a91-91b5-db40134c9f1e",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = GoogleBigQuery.Database([BillingProject=\"fshiccaios---inchanelclientapp\"]),",
-                "    #\"fshiccaios---inchanelclientapp\" = Source{[Name=\"fshiccaios---inchanelclientapp\"]}[Data],",
-                "    REVAMP_DASHBOARD_Schema = #\"fshiccaios---inchanelclientapp\"{[Name=\"REVAMP_DASHBOARD\",Kind=\"Schema\"]}[Data],",
-                "    FASHION_APP_PLATEFORM_TECHNICAL_View = REVAMP_DASHBOARD_Schema{[Name=\"FSH_APP_TECHNICAL\",Kind=\"View\"]}[Data],",
-                "    #\"Lignes filtrées\" = Table.SelectRows(FASHION_APP_PLATEFORM_TECHNICAL_View, each true),",
-                "    #\"Valeur remplacée\" = Table.ReplaceValue(#\"Lignes filtrées\",null,\"Other\",Replacer.ReplaceValue,{\"DEVICE_MODEL\"}),",
-                "    #\"Lignes filtrées1\" = Table.SelectRows(#\"Valeur remplacée\", each true)",
-                "in",
-                "    #\"Lignes filtrées1\""
-              ],
-              "type": "m"
             }
           }
         ]
@@ -1025,6 +767,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -1351,6 +1097,417 @@
           }
         ],
         "showAsVariationsOnly": true
+      },
+      {
+        "name": "agg__app__IT",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "DATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "bb69f6fe-e56a-448f-a751-f04f9fd99be8",
+            "sourceColumn": "DATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "REGION_CHANEL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4d05d351-090a-41a2-b43f-f71350528e5f",
+            "sourceColumn": "REGION_CHANEL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "COUNTRY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3b16a6d6-b6a5-4e28-8d9e-c652c608853f",
+            "sourceColumn": "COUNTRY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "APP_VERSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "434078c2-894d-47c0-a0b3-91839dc28349",
+            "sourceColumn": "APP_VERSION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MOBILE_VERSION_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "28ca7595-8dce-421e-9f5e-58ddc98e3322",
+            "sourceColumn": "MOBILE_VERSION_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OPERATING_SYSTEM_VERSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e12bbf79-82ce-4766-be0d-c4b0aca71b03",
+            "sourceColumn": "OPERATING_SYSTEM_VERSION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "USER_TYPE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "efb7ab5a-6925-45e9-9f6f-cbcfb4522cee",
+            "sourceColumn": "USER_TYPE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "COUNT_NOTIFICATION_USERS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "91711b39-4af6-4a73-8937-5080e1fcd830",
+            "sourceColumn": "COUNT_NOTIFICATION_USERS",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "COUNT_NOTIFICATION_VISIT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8a16b4b2-6a4d-43d5-82ad-3df958bf2b48",
+            "sourceColumn": "COUNT_NOTIFICATION_VISIT",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DISTINCT_COUNT_USERS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dab3ca93-9746-49a7-86a9-38e54818d11e",
+            "sourceColumn": "DISTINCT_COUNT_USERS",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DISTINCT_COUNT_SESSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8a55a1bc-a1ad-45f3-b366-b2424a210569",
+            "sourceColumn": "DISTINCT_COUNT_SESSION",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "COUNT_SCREEN_VIEWS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9c0ba23c-b953-4dee-8486-b07fff8f0169",
+            "sourceColumn": "COUNT_SCREEN_VIEWS",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "7b620099-9c8b-472f-809d-49bc00ca9e33",
+        "partitions": [
+          {
+            "name": "agg__app__IT",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = GoogleBigQuery.Database([BillingProject=project_id, CommandTimeout=#duration(0,0,15,0)]),",
+                "    #\"fsh-digital-dashboard-dev\" = Source{[Name=\"fsh-digital-dashboard-dev\"]}[Data],",
+                "    wang_dev_DATASET_DASHBOARD_Schema = #\"fsh-digital-dashboard-dev\"{[Name=\"wang_dev_DATASET_DASHBOARD\",Kind=\"Schema\"]}[Data],",
+                "    agg__app__IT_Table = wang_dev_DATASET_DASHBOARD_Schema{[Name=\"agg__app__IT\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    agg__app__IT_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "agg__app__IT__screen__name",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "DATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "e91e9512-750b-4f9d-99e7-0606161934d3",
+            "sourceColumn": "DATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "REGION_CHANEL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9bd3f6d0-1f68-4932-a18c-b4f355b628f0",
+            "sourceColumn": "REGION_CHANEL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "COUNTRY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "57d5fec9-4002-45d1-ae22-b98fa87ed8f5",
+            "sourceColumn": "COUNTRY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "APP_VERSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3d5e3bbe-4064-4d16-a40b-b95622cdde50",
+            "sourceColumn": "APP_VERSION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MOBILE_VERSION_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7ddb6b09-3710-422a-b905-cbf6c5533902",
+            "sourceColumn": "MOBILE_VERSION_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OPERATING_SYSTEM_VERSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "961fe439-0330-470b-a151-cf06152f4cdd",
+            "sourceColumn": "OPERATING_SYSTEM_VERSION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SCREEN_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "81086cf8-991f-4c28-b5cc-54b8917bb681",
+            "sourceColumn": "SCREEN_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DISTINCT_COUNT_SESSION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "13e7fe97-ab07-4ce9-856e-c528678aa242",
+            "sourceColumn": "DISTINCT_COUNT_SESSION",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "b2fb5e8f-d5e8-4c73-8728-6f5e0232b470",
+        "partitions": [
+          {
+            "name": "agg__app__IT__screen__name",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = GoogleBigQuery.Database([BillingProject=project_id, CommandTimeout=#duration(0,0,15,0)]),",
+                "    #\"fsh-digital-dashboard-dev\" = Source{[Name=\"fsh-digital-dashboard-dev\"]}[Data],",
+                "    wang_dev_DATASET_DASHBOARD_Schema = #\"fsh-digital-dashboard-dev\"{[Name=\"wang_dev_DATASET_DASHBOARD\",Kind=\"Schema\"]}[Data],",
+                "    agg__app__IT_Table = wang_dev_DATASET_DASHBOARD_Schema{[Name=\"agg__app__IT__screen__name\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    agg__app__IT_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measures table",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "lineageTag": "86c9cc50-e4e5-456d-90f2-c830b4b18597",
+        "measures": [
+          {
+            "name": "Screens/Visits ratio",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Screen_Views]/[Total_Visit]",
+            "lineageTag": "0edf0963-5299-415f-9bda-f4418026d40b"
+          },
+          {
+            "name": "Total_Visit",
+            "expression": "SUM(agg__app__IT[DISTINCT_COUNT_SESSION])",
+            "formatString": "0",
+            "lineageTag": "f8d15fc8-6636-4053-b447-2db588f45af5"
+          },
+          {
+            "name": "Screen_Views",
+            "expression": "SUM(agg__app__IT[COUNT_SCREEN_VIEWS])",
+            "formatString": "0",
+            "lineageTag": "9df40975-940f-4a0b-bac8-cabd7cc0fa77"
+          },
+          {
+            "name": "Total_Users",
+            "expression": "SUM(agg__app__IT[DISTINCT_COUNT_USERS])",
+            "formatString": "0",
+            "lineageTag": "8f8641a2-e8dc-4569-895c-8bab188835a7"
+          },
+          {
+            "name": "Total_Visit_only_notification_event",
+            "expression": [
+              "",
+              "CALCULATE([Total_Visit], agg__app__IT[COUNT_NOTIFICATION_VISIT]=1)"
+            ],
+            "formatString": "0",
+            "lineageTag": "77a49694-7e99-4f3f-8bf0-7584cc2207d2"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Measures table",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measures = _t]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(Source,{{\"Measures\", type text}}),",
+                "    #\"Colonnes supprimées\" = Table.RemoveColumns(#\"Type modifié\",{\"Measures\"})",
+                "in",
+                "    #\"Colonnes supprimées\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
       }
     ]
   }
